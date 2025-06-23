@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedic Life - Ancient Wisdom for Modern Living</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="20" cy="20" r="2" fill="url(%23g)"><animate attributeName="cy" values="20;80;20" dur="3s" repeatCount="indefinite"/></circle><circle cx="50" cy="30" r="1.5" fill="url(%23g)"><animate attributeName="cy" values="30;70;30" dur="4s" repeatCount="indefinite"/></circle><circle cx="80" cy="40" r="1" fill="url(%23g)"><animate attributeName="cy" values="40;60;40" dur="2s" repeatCount="indefinite"/></circle></svg>') center/cover;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Content */
+        main {
+            background: white;
+            margin-top: -100px;
+            position: relative;
+            z-index: 3;
+            border-radius: 30px 30px 0 0;
+            padding: 6rem 0 2rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .feature-card p {
+            color: #718096;
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2d3748;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #718096;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 400px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 Q50,10 80,20 Q90,50 80,80 Q50,90 20,80 Q10,50 20,20" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><animateTransform attributeName="transform" type="rotate" values="0 50 50;360 50 50" dur="20s" repeatCount="indefinite"/></path></svg>') center/cover;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #4a5568;
+            padding-top: 2rem;
+            color: #a0aec0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .features h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">🕉️ Vedic Life</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#lifestyle">Lifestyle</a></li>
+                <li><a href="#nutrition">Nutrition</a></li>
+                <li><a href="#herbs">Herbs</a></li>
+                <li><a href="#medicine">Medicine</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Ancient Wisdom for Modern Living</h1>
+            <p>Discover the timeless principles of Vedic lifestyle, nutrition, and natural healing</p>
+            <a href="#about" class="cta-button">Begin Your Journey</a>
+        </div>
+    </section>
+
+    <main>
+        <section class="features" id="lifestyle">
+            <div class="container">
+                <h2 class="fade-in">Our Focus Areas</h2>
+                <div class="features-grid">
+                    <div class="feature-card fade-in">
+                        <span class="feature-icon">🧘‍♀️</span>
+                        <h3>Vedic Lifestyle</h3>
+                        <p>Learn ancient practices for daily living that promote harmony, balance, and spiritual growth. Discover meditation, yoga, and mindful living techniques passed down through generations.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <span class="feature-icon">🌱</span>
+                        <h3>Ayurvedic Nutrition</h3>
+                        <p>Explore the science of Ayurvedic eating based on your unique constitution. Understand how food affects your body, mind, and spirit for optimal health and vitality.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <span class="feature-icon">🌿</span>
+                        <h3>Sacred Herbs</h3>
+                        <p>Discover the healing power of traditional herbs and plants used in Ayurvedic medicine. Learn about their properties, preparation methods, and therapeutic applications.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <span class="feature-icon">💊</span>
+                        <h3>Natural Medicine</h3>
+                        <p>Understand holistic approaches to health and healing using natural remedies, herbal formulations, and traditional therapeutic practices for modern wellness.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text fade-in">
+                        <h2>Our Mission</h2>
+                        <p>Vedic Life is dedicated to preserving and sharing the profound wisdom of ancient Vedic traditions. We believe that these time-tested practices offer invaluable guidance for creating a balanced, healthy, and meaningful life in our modern world.</p>
+                        <p>Through education, research, and community outreach, we make these ancient teachings accessible to everyone seeking natural approaches to wellness, spiritual growth, and harmonious living.</p>
+                        <p>Our team of scholars, practitioners, and wellness experts work tirelessly to bridge the gap between ancient wisdom and contemporary understanding, ensuring authenticity while maintaining relevance for today's seekers.</p>
+                    </div>
+                    <div class="about-image fade-in">
+                        <span>🌸</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@vediclife.org</p>
+                    <p>Phone: (555) 123-4567</p>
+                    <p>Address: 123 Wellness Way, Harmony City, HC 12345</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Programs</h3>
+                    <p><a href="#">Lifestyle Workshops</a></p>
+                    <p><a href="#">Nutrition Counseling</a></p>
+                    <p><a href="#">Herbal Medicine Classes</a></p>
+                    <p><a href="#">Meditation Retreats</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <p><a href="#">Research Library</a></p>
+                    <p><a href="#">Community Forum</a></p>
+                    <p><a href="#">Newsletter</a></p>
+                    <p><a href="#">Practitioner Directory</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vedic Life. A registered non-profit organization dedicated to sharing ancient wisdom.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Detailed Pages -->
+    <div id="vedic-lifestyle-page" class="page-content" style="display: none;">
+        <div class="page-header">
+            <div class="container">
+                <h1>🧘‍♀️ Vedic Lifestyle</h1>
+                <p>Ancient Principles for Modern Living</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="page-body">
+                <section class="content-section">
+                    <h2>What is Vedic Lifestyle?</h2>
+                    <p>The Vedic lifestyle is based on ancient Sanskrit texts that provide comprehensive guidance for living in harmony with natural rhythms and cosmic principles. These time-tested practices promote physical health, mental clarity, emotional balance, and spiritual growth.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Core Principles</h3>
+                        <ul>
+                            <li><strong>Dinacharya (Daily Routine):</strong> Structured daily practices aligned with natural cycles</li>
+                            <li><strong>Ritucharya (Seasonal Living):</strong> Adapting lifestyle to seasonal changes</li>
+                            <li><strong>Dharma:</strong> Living according to one's purpose and natural law</li>
+                            <li><strong>Ahimsa:</strong> Non-violence in thought, word, and action</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Daily Practices (Dinacharya)</h2>
+                    
+                    <div class="practice-grid">
+                        <div class="practice-card">
+                            <h4>🌅 Morning Routine (5:30-8:00 AM)</h4>
+                            <ul>
+                                <li>Wake before sunrise (ideally 5:30 AM)</li>
+                                <li>Drink warm water with lemon</li>
+                                <li>Practice meditation or pranayama</li>
+                                <li>Gentle yoga or stretching</li>
+                                <li>Oil pulling (gandusha)</li>
+                                <li>Self-massage with warm oil (abhyanga)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="practice-card">
+                            <h4>☀️ Midday Activities (8:00 AM-6:00 PM)</h4>
+                            <ul>
+                                <li>Eat largest meal at noon when digestion is strongest</li>
+                                <li>Take short walks after meals</li>
+                                <li>Practice mindful work and study</li>
+                                <li>Spend time in nature</li>
+                                <li>Maintain positive thoughts and speech</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="practice-card">
+                            <h4>🌙 Evening Routine (6:00-10:00 PM)</h4>
+                            <ul>
+                                <li>Light dinner before sunset</li>
+                                <li>Gentle evening yoga or stretching</li>
+                                <li>Reflection and gratitude practice</li>
+                                <li>Reading spiritual texts</li>
+                                <li>Prepare for sleep by 10 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Seasonal Living (Ritucharya)</h2>
+                    <p>Vedic wisdom recognizes six seasons, each requiring specific lifestyle adjustments:</p>
+                    
+                    <div class="seasonal-guide">
+                        <div class="season-item">
+                            <h4>🌸 Spring (Vasant) - March-April</h4>
+                            <p>Focus on detoxification, lighter foods, increased activity, and kapha-balancing practices.</p>
+                        </div>
+                        <div class="season-item">
+                            <h4>☀️ Summer (Grishma) - May-June</h4>
+                            <p>Emphasize cooling foods, hydration, moderate exercise, and pitta-pacifying activities.</p>
+                        </div>
+                        <div class="season-item">
+                            <h4>🌧️ Monsoon (Varsha) - July-August</h4>
+                            <p>Strengthen digestion, avoid heavy foods, practice indoor activities, and boost immunity.</p>
+                        </div>
+                        <div class="season-item">
+                            <h4>🍂 Autumn (Sharad) - September-October</h4>
+                            <p>Balance pitta dosha, eat nourishing foods, and prepare for winter with grounding practices.</p>
+                        </div>
+                        <div class="season-item">
+                            <h4>❄️ Winter (Shishir) - November-December</h4>
+                            <p>Build strength and immunity, eat warming foods, and practice energizing activities.</p>
+                        </div>
+                        <div class="season-item">
+                            <h4>🌨️ Late Winter (Hemant) - January-February</h4>
+                            <p>Continue warming practices, maintain stable routines, and prepare for spring renewal.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Meditation and Mindfulness</h2>
+                    <p>Central to Vedic lifestyle is the cultivation of inner awareness through various meditation practices:</p>
+                    
+                    <div class="meditation-types">
+                        <div class="meditation-card">
+                            <h4>Dhyana (Concentration)</h4>
+                            <p>Focused attention on a single object, mantra, or breath to develop mental clarity and stability.</p>
+                        </div>
+                        <div class="meditation-card">
+                            <h4>Dharana (Contemplation)</h4>
+                            <p>Sustained awareness and reflection on spiritual truths or philosophical concepts.</p>
+                        </div>
+                        <div class="meditation-card">
+                            <h4>Samadhi (Absorption)</h4>
+                            <p>The ultimate state of unified consciousness and transcendence of individual identity.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Practical Implementation</h2>
+                    <div class="implementation-guide">
+                        <div class="step-card">
+                            <h4>Week 1-2: Foundation</h4>
+                            <p>Establish consistent sleep and wake times. Begin with 10 minutes of morning meditation.</p>
+                        </div>
+                        <div class="step-card">
+                            <h4>Week 3-4: Expansion</h4>
+                            <p>Add oil pulling, warm water routine, and evening reflection practice.</p>
+                        </div>
+                        <div class="step-card">
+                            <h4>Week 5-8: Integration</h4>
+                            <p>Incorporate seasonal eating, nature connection, and deeper spiritual practices.</p>
+                        </div>
+                        <div class="step-card">
+                            <h4>Ongoing: Mastery</h4>
+                            <p>Refine practices based on your constitution and life circumstances.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="ayurvedic-nutrition-page" class="page-content" style="display: none;">
+        <div class="page-header">
+            <div class="container">
+                <h1>🌱 Ayurvedic Nutrition</h1>
+                <p>Food as Medicine for Body, Mind, and Spirit</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="page-body">
+                <section class="content-section">
+                    <h2>Foundations of Ayurvedic Nutrition</h2>
+                    <p>Ayurvedic nutrition is based on the principle that food is medicine. It emphasizes eating according to your unique constitution (prakriti), current state of balance (vikriti), and environmental factors. The goal is to maintain digestive fire (agni) and promote optimal health through conscious food choices.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Six Tastes (Rasa)</h3>
+                        <div class="taste-grid">
+                            <div class="taste-card">
+                                <h4>🍯 Sweet (Madhura)</h4>
+                                <p>Nourishing, building, calming. Found in grains, fruits, dairy, and natural sugars.</p>
+                            </div>
+                            <div class="taste-card">
+                                <h4>🍋 Sour (Amla)</h4>
+                                <p>Stimulating, warming, digestive. Found in citrus, fermented foods, and vinegar.</p>
+                            </div>
+                            <div class="taste-card">
+                                <h4>🧂 Salty (Lavana)</h4>
+                                <p>Hydrating, grounding, enhancing. Found in sea salt, seaweed, and processed foods.</p>
+                            </div>
+                            <div class="taste-card">
+                                <h4>🌶️ Pungent (Katu)</h4>
+                                <p>Heating, stimulating, clearing. Found in spices, onions, and hot peppers.</p>
+                            </div>
+                            <div class="taste-card">
+                                <h4>🥬 Bitter (Tikta)</h4>
+                                <p>Cooling, detoxifying, reducing. Found in leafy greens and herbs.</p>
+                            </div>
+                            <div class="taste-card">
+                                <h4>🍊 Astringent (Kashaya)</h4>
+                                <p>Drying, cooling, binding. Found in beans, pomegranates, and green tea.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Constitutional Eating</h2>
+                    
+                    <div class="dosha-nutrition">
+                        <div class="dosha-card">
+                            <h3>🌬️ Vata Constitution</h3>
+                            <div class="dosha-details">
+                                <h4>Characteristics:</h4>
+                                <p>Dry, cold, light, mobile, rough qualities. Tends toward anxiety, irregular digestion, and variable energy.</p>
+                                
+                                <h4>Balancing Foods:</h4>
+                                <ul>
+                                    <li>Warm, moist, grounding foods</li>
+                                    <li>Cooked vegetables, soups, stews</li>
+                                    <li>Sweet fruits, nuts, and seeds</li>
+                                    <li>Warming spices: ginger, cinnamon, cardamom</li>
+                                    <li>Healthy fats: ghee, olive oil, avocado</li>
+                                </ul>
+                                
+                                <h4>Foods to Reduce:</h4>
+                                <ul>
+                                    <li>Cold, dry, raw foods</li>
+                                    <li>Excessive caffeine and stimulants</li>
+                                    <li>Processed and packaged foods</li>
+                                    <li>Beans and legumes (except mung)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="dosha-card">
+                            <h3>🔥 Pitta Constitution</h3>
+                            <div class="dosha-details">
+                                <h4>Characteristics:</h4>
+                                <p>Hot, oily, sharp, light qualities. Tends toward strong digestion, intensity, and heat-related conditions.</p>
+                                
+                                <h4>Balancing Foods:</h4>
+                                <ul>
+                                    <li>Cool, sweet, bitter foods</li>
+                                    <li>Fresh fruits and vegetables</li>
+                                    <li>Coconut, cucumber, mint</li>
+                                    <li>Cooling spices: coriander, fennel, cumin</li>
+                                    <li>Dairy products (in moderation)</li>
+                                </ul>
+                                
+                                <h4>Foods to Reduce:</h4>
+                                <ul>
+                                    <li>Spicy, sour, salty foods</li>
+                                    <li>Excessive heat-producing foods</li>
+                                    <li>Alcohol and caffeine</li>
+                                    <li>Processed meats and fried foods</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="dosha-card">
+                            <h3>🌍 Kapha Constitution</h3>
+                            <div class="dosha-details">
+                                <h4>Characteristics:</h4>
+                                <p>Heavy, moist, cool, stable qualities. Tends toward slow digestion, weight gain, and congestion.</p>
+                                
+                                <h4>Balancing Foods:</h4>
+                                <ul>
+                                    <li>Light, warm, pungent foods</li>
+                                    <li>Steamed vegetables and legumes</li>
+                                    <li>Warming spices: ginger, black pepper, turmeric</li>
+                                    <li>Bitter greens and herbs</li>
+                                    <li>Limited amounts of healthy oils</li>
+                                </ul>
+                                
+                                <h4>Foods to Reduce:</h4>
+                                <ul>
+                                    <li>Heavy, oily, sweet foods</li>
+                                    <li>Dairy products (except low-fat)</li>
+                                    <li>Excessive nuts and seeds</li>
+                                    <li>Cold drinks and ice cream</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Digestive Fire (Agni)</h2>
+                    <p>Agni is the digestive fire that transforms food into energy and consciousness. Maintaining strong agni is essential for health and vitality.</p>
+                    
+                    <div class="agni-guide">
+                        <div class="agni-type">
+                            <h4>🔥 Balanced Agni (Sama Agni)</h4>
+                            <p>Regular appetite, good digestion, normal elimination, stable energy levels.</p>
+                        </div>
+                        <div class="agni-type">
+                            <h4>🌪️ Variable Agni (Vishama Agni)</h4>
+                            <p>Irregular appetite and digestion, gas, bloating. Common in Vata types.</p>
+                        </div>
+                        <div class="agni-type">
+                            <h4>🌋 Intense Agni (Tikshna Agni)</h4>
+                            <p>Excessive hunger, fast digestion, hyperacidity. Common in Pitta types.</p>
+                        </div>
+                        <div class="agni-type">
+                            <h4>🐌 Weak Agni (Manda Agni)</h4>
+                            <p>Poor appetite, slow digestion, heaviness after eating. Common in Kapha types.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="agni-tips">
+                        <h4>Tips for Strengthening Agni:</h4>
+                        <ul>
+                            <li>Eat your largest meal at midday when the sun is strongest</li>
+                            <li>Avoid drinking large amounts of liquid with meals</li>
+                            <li>Chew food thoroughly and eat mindfully</li>
+                            <li>Use digestive spices: ginger, cumin, coriander, fennel</li>
+                            <li>Take a short walk after meals</li>
+                            <li>Avoid eating when stressed or emotionally upset</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Meal Planning and Preparation</h2>
+                    <div class="meal-planning">
+                        <div class="meal-section">
+                            <h4>🌅 Breakfast</h4>
+                            <p>Light, warm, and nourishing. Examples: warm oatmeal with spices, herbal teas, fresh fruit.</p>
+                        </div>
+                        <div class="meal-section">
+                            <h4>🌞 Lunch</h4>
+                            <p>Largest meal of the day. Include all six tastes, cooked vegetables, grains, and protein.</p>
+                        </div>
+                        <div class="meal-section">
+                            <h4>🌙 Dinner</h4>
+                            <p>Light, easily digestible. Soups, steamed vegetables, and minimal raw foods.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cooking-tips">
+                        <h4>Conscious Cooking Practices:</h4>
+                        <ul>
+                            <li>Cook with love and positive intention</li>
+                            <li>Use fresh, seasonal, and locally sourced ingredients</li>
+                            <li>Incorporate appropriate spices for your constitution</li>
+                            <li>Avoid reheating food multiple times</li>
+                            <li>Say a prayer or express gratitude before eating</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="herbs-page" class="page-content" style="display: none;">
+        <div class="page-header">
+            <div class="container">
+                <h1>🌿 Sacred Herbs</h1>
+                <p>Nature's Pharmacy for Healing and Wellness</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="page-body">
+                <section class="content-section">
+                    <h2>The Wisdom of Herbal Medicine</h2>
+                    <p>For thousands of years, Ayurvedic practitioners have used herbs as powerful allies in healing and maintaining health. These sacred plants contain concentrated life force energy (prana) and specific therapeutic properties that can restore balance to the body, mind, and spirit.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Herbal Energetics</h3>
+                        <p>Ayurvedic herbs are classified by their:</p>
+                        <ul>
+                            <li><strong>Rasa (Taste):</strong> Sweet, sour, salty, pungent, bitter, astringent</li>
+                            <li><strong>Virya (Energy):</strong> Heating or cooling effect on the body</li>
+                            <li><strong>Vipaka (Post-digestive effect):</strong> Long-term impact on metabolism</li>
+                            <li><strong>Prabhava (Special potency):</strong> Unique therapeutic actions</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Essential Ayurvedic Herbs</h2>
+                    
+                    <div class="herbs-grid">
+                        <div class="herb-card">
+                            <h3>🌿 Ashwagandha (Withania somnifera)</h3>
+                            <div class="herb-details">
+                                <p><strong>Properties:</strong> Adaptogenic, rejuvenative, nervine tonic</p>
+                                <p><strong>Benefits:</strong> Reduces stress and anxiety, improves sleep quality, enhances immunity, increases vitality</p>
+                                <p><strong>Uses:</strong> Powder mixed with warm milk, capsules, or tinctures</p>
+                                <p><strong>Dosage:</strong> 1-3 grams daily, preferably in the evening</p>
+                            </div>
+                        </div>
+                        
+                        <div class="herb-card">
+                            <h3>🌱 Turmeric (Curcuma longa)</h3>
+                            <div class="herb-details">
+                                <p><strong>Properties:</strong> Anti-inflammatory, antioxidant, blood purifier</p>
+                                <p><strong>Benefits:</strong> Reduces inflammation, supports liver health, improves skin conditions, aids digestion</p>
+                                <p><strong>Uses:</strong> Fresh root, powder in cooking, golden milk, supplements</p>
+                                <p><strong>Dosage:</strong> 1-3 grams daily with meals</p>
+                            </div>
+                        </div>
+                        
+                        <div class="herb-card">
+                            <h3>🍃 Brahmi (Bacopa monnieri)</h3>
+                            <div class="herb-details">
+                                <p><strong>Properties:</strong> Nootropic, nervine, memory enhancer</p>
+                                <p><strong>Benefits:</strong> Improves cognitive function, reduces mental fatigue, enhances concentration, calms the mind</p>
+                                <p><strong>Uses:</strong> Powder, capsules, fresh juice, herbal tea</p>
+                                <p><strong>Dosage:</strong> 500mg-1gram daily on empty stomach</p>
+                            </div>
+                        </div>
+                        
+                        <div class="herb-card">
+                            <h3>🌿 Triphala</h3>
+                            <div class="herb-details">
+                                <p><strong>Properties:</strong> Gentle laxative, detoxifier, rejuvenative</p>
+                                <p><strong>Benefits:</strong> Supports digestive health, cleanses toxins, improves elimination, balances all three doshas</p>
+                                <p><strong>Uses:</strong> Powder mixed with warm water, tablets, or capsules</p>
+                                <p><strong>Dosage:</strong> 1-2 teaspoons at bedtime</p>
+                            </div>
+                        </div>
+                        
+                        <div class="herb-card">
+                            <h3>🌱 Ginger (Zingiber officinale)</h3>
+                            <div class="herb-details">
+                                <p><strong>Properties:</strong> Digestive stimulant, anti-inflammatory, warming</p>
+                                <p><strong>Benefits:</strong> Improves digestion, reduces nausea, enhances circulation, relieves cold symptoms</p>
+                                <p><strong>Uses:</strong> Fresh root, dried powder, tea, cooking spice</p>
+                                <p><strong>Dosage:</strong> 1-3 grams daily with meals</p>
+                            </div>
+                        </div>
+                        
+                        <div class="herb-card">
+                            <h3>🌿 Tulsi (Ocimum sanctum)</h3>
+                            <div class="herb-details">
+                                <p><strong>Properties:</strong> Adaptogenic, immune modulator, sacred plant</p>
+                                <p><strong>Benefits:</strong> Reduces stress, supports respiratory health, enhances immunity, promotes spiritual awareness</p>
+                                <p><strong>Uses:</strong> Fresh leaves, dried tea, essential oil, tinctures</p>
+                                <p><strong>Dosage:</strong> 1-2 cups of tea daily or 500mg extract</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Herbal Preparations</h2>
+                    <div class="preparations-grid">
+                        <div class="prep-card">
+                            <h4>🫖 Herbal Teas (Kashayam)</h4>
+                            <p>Decoctions made by boiling herbs in water. Ideal for extracting water-soluble compounds and daily consumption.</p>
+                        </div>
+                        <div class="prep-card">
+                            <h4>🥄 Herbal Powders (Churna)</h4>
+                            <p>Finely ground herbs mixed with honey, ghee, or warm water. Concentrated and easy to store.</p>
+                        </div>
+                        <div class="prep-card">
+                            <h4>🧴 Herbal Oils (Taila)</h4>
+                            <p>Herbs processed in oil for external application. Used for massage, skin care, and therapeutic treatments.</p>
+                        </div>
+                        <div class="prep-card">
+                            <h4>🍯 Herbal Jams (Avaleha)</h4>
+                            <p>Herbs cooked with honey or jaggery. Pleasant tasting and nourishing preparations for long-term use.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Constitutional Herbal Guidelines</h2>
+                    <div class="constitutional-herbs">
+                        <div class="constitution-herbs">
+                            <h4>🌬️ Vata-Balancing Herbs</h4>
+                            <ul>
+                                <li>Ashwagandha - for stress and anxiety</li>
+                                <li>Bala - for strength and vitality</li>
+                                <li>Shatavari - for reproductive health</li>
+                                <li>Jatamansi - for nervous system support</li>
+                                <li>Dashamula - for pain and inflammation</li>
+                            </ul>
+                        </div>
+                        <div class="constitution-herbs">
+                            <h4>🔥 Pitta-Balancing Herbs</h4>
+                            <ul>
+                                <li>Aloe vera - for cooling and healing</li>
+                                <li>Coriander - for digestive fire balance</li>
+                                <li>Neem - for blood purification</li>
+                                <li>Brahmi - for mental clarity</li>
+                                <li>Manjistha - for skin health</li>
+                            </ul>
+                        </div>
+                        <div class="constitution-herbs">
+                            <h4>🌍 Kapha-Balancing Herbs</h4>
+                            <ul>
+                                <li>Trikatu - for metabolism and digestion</li>
+                                <li>Punarnava - for fluid balance</li>
+                                <li>Guggulu - for cholesterol and weight</li>
+                                <li>Bibhitaki - for respiratory health</li>
+                                <li>Chitrak - for digestive fire</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Safety and Precautions</h2>
+                    <div class="safety-guidelines">
+                        <div class="safety-section">
+                            <h4>⚠️ Important Considerations</h4>
+                            <ul>
+                                <li>Consult with qualified practitioners before starting any herbal regimen</li>
+                                <li>Start with small doses and gradually increase as needed</li>
+                                <li>Be aware of potential herb-drug interactions</li>
+                                <li>Choose high-quality, organic herbs from reputable sources</li>
+                                <li>Pregnant and nursing women should exercise extra caution</li>
+                                <li>Discontinue use if any adverse reactions occur</li>
+                            </ul>
+                        </div>
+                        <div class="safety-section">
+                            <h4>🌱 Sourcing and Quality</h4>
+                            <ul>
+                                <li>Look for organic certification and sustainable harvesting</li>
+                                <li>Verify the botanical name and part of plant used</li>
+                                <li>Check for third-party testing for purity and potency</li>
+                                <li>Store herbs in cool, dry places away from light</li>
+                                <li>Replace powdered herbs every 1-2 years</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="natural-medicine-page" class="page-content" style="display: none;">
+        <div class="page-header">
+            <div class="container">
+                <h1>💊 Natural Medicine</h1>
+                <p>Holistic Approaches to Health and Healing</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="page-body">
+                <section class="content-section">
+                    <h2>Principles of Natural Medicine</h2>
+                    <p>Natural medicine in the Vedic tradition views health as a state of perfect balance between body, mind, and spirit. It emphasizes prevention, treats the root cause rather than symptoms, and uses the body's innate healing capacity to restore wellness.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Core Principles</h3>
+                        <ul>
+                            <li><strong>Vis Medicatrix Naturae:</strong> The healing power of nature</li>
+                            <li><strong>Primum Non Nocere:</strong> First, do no harm</li>
+                            <li><strong>Tolle Causam:</strong> Treat the root cause</li>
+                            <li><strong>Docere:</strong> Doctor as teacher</li>
+                            <li><strong>Prevention:</strong> Better than cure</li>
+                            <li><strong>Whole Person:</strong> Treat the individual, not the disease</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Therapeutic Modalities</h2>
+                    
+                    <div class="modalities-grid">
+                        <div class="modality-card">
+                            <h3>🌿 Panchakarma</h3>
+                            <p><strong>Purpose:</strong> Deep detoxification and rejuvenation therapy</p>
+                            <div class="modality-details">
+                                <h4>Five Actions:</h4>
+                                <ul>
+                                    <li>Vamana (Therapeutic vomiting) - for Kapha disorders</li>
+                                    <li>Virechana (Purgation) - for Pitta disorders</li>
+                                    <li>Basti (Medicated enemas) - for Vata disorders</li>
+                                    <li>Nasya (Nasal medication) - for head and neck issues</li>
+                                    <li>Raktamokshana (Bloodletting) - for blood-related disorders</li>
+                                </ul>
+                                <p><strong>Duration:</strong> 7-21 days under professional supervision</p>
+                            </div>
+                        </div>
+                        
+                        <div class="modality-card">
+                            <h3>💆‍♀️ Abhyanga</h3>
+                            <p><strong>Purpose:</strong> Daily oil massage for health maintenance</p>
+                            <div class="modality-details">
+                                <h4>Benefits:</h4>
+                                <ul>
+                                    <li>Improves circulation and lymphatic drainage</li>
+                                    <li>Nourishes skin and nervous system</li>
+                                    <li>Reduces stress and promotes relaxation</li>
+                                    <li>Enhances flexibility and joint mobility</li>
+                                </ul>
+                                <h4>Technique:</h4>
+                                <p>Warm sesame or coconut oil applied in circular motions, followed by warm bath</p>
+                            </div>
+                        </div>
+                        
+                        <div class="modality-card">
+                            <h3>🧘‍♂️ Pranayama</h3>
+                            <p><strong>Purpose:</strong> Breath control for vital energy regulation</p>
+                            <div class="modality-details">
+                                <h4>Key Techniques:</h4>
+                                <ul>
+                                    <li>Nadi Shodhana - Alternate nostril breathing</li>
+                                    <li>Kapalabhati - Skull shining breath</li>
+                                    <li>Bhramari - Humming bee breath</li>
+                                    <li>Ujjayi - Victorious breath</li>
+                                </ul>
+                                <p><strong>Practice:</strong> 10-20 minutes daily, preferably in morning</p>
+                            </div>
+                        </div>
+                        
+                        <div class="modality-card">
+                            <h3>🔥 Agnikarma</h3>
+                            <p><strong>Purpose:</strong> Therapeutic heat application</p>
+                            <div class="modality-details">
+                                <h4>Applications:</h4>
+                                <ul>
+                                    <li>Joint pain and arthritis</li>
+                                    <li>Chronic wounds and skin conditions</li>
+                                    <li>Neurological disorders</li>
+                                    <li>Certain tumors and growths</li>
+                                </ul>
+                                <p><strong>Note:</strong> Must be performed by trained professionals only</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Mind-Body Healing</h2>
+                    <p>Vedic natural medicine recognizes the profound connection between mental and physical health. Emotional imbalances are seen as root causes of many physical ailments.</p>
+                    
+                    <div class="mind-body-approaches">
+                        <div class="approach-card">
+                            <h4>🎵 Sound Therapy (Nada Chikitsa)</h4>
+                            <p>Using mantras, music, and specific frequencies to heal and balance the nervous system.</p>
+                            <ul>
+                                <li>Chanting sacred mantras</li>
+                                <li>Listening to ragas (classical melodies)</li>
+                                <li>Using singing bowls and bells</li>
+                                <li>Practicing vocal toning</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="approach-card">
+                            <h4>🎨 Color Therapy (Varna Chikitsa)</h4>
+                            <p>Utilizing specific colors to influence mood, energy, and healing processes.</p>
+                            <ul>
+                                <li>Red - Stimulating, energizing, for Kapha</li>
+                                <li>Blue - Cooling, calming, for Pitta</li>
+                                <li>Yellow - Warming, balancing, for Vata</li>
+                                <li>Green - Harmonizing, healing for all doshas</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="approach-card">
+                            <h4>💎 Gem Therapy (Ratna Chikitsa)</h4>
+                            <p>Using precious stones and crystals to balance subtle energies and promote healing.</p>
+                            <ul>
+                                <li>Ruby - For heart and circulation</li>
+                                <li>Emerald - For nervous system</li>
+                                <li>Pearl - For emotional balance</li>
+                                <li>Diamond - For overall vitality</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="approach-card">
+                            <h4>🌙 Marma Therapy</h4>
+                            <p>Stimulation of vital energy points similar to acupuncture but without needles.</p>
+                            <ul>
+                                <li>107 major marma points on the body</li>
+                                <li>Gentle pressure or massage</li>
+                                <li>Balances prana (life force)</li>
+                                <li>Treats both physical and emotional issues</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Disease Prevention Strategies</h2>
+                    <div class="prevention-strategies">
+                        <div class="strategy-section">
+                            <h4>🍎 Nutritional Medicine</h4>
+                            <ul>
+                                <li>Eating according to constitution and season</li>
+                                <li>Using food as medicine for specific conditions</li>
+                                <li>Proper food combining and timing</li>
+                                <li>Fasting and cleansing protocols</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="strategy-section">
+                            <h4>🧘‍♀️ Lifestyle Medicine</h4>
+                            <ul>
+                                <li>Regular daily routines (dinacharya)</li>
+                                <li>Seasonal lifestyle adjustments</li>
+                                <li>Stress management techniques</li>
+                                <li>Adequate sleep and rest</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="strategy-section">
+                            <h4>🌿 Herbal Prevention</h4>
+                            <ul>
+                                <li>Rasayana (rejuvenative) herbs</li>
+                                <li>Seasonal herbal preparations</li>
+                                <li>Constitutional herbal support</li>
+                                <li>Immune-boosting formulations</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="strategy-section">
+                            <h4>🧠 Mental Hygiene</h4>
+                            <ul>
+                                <li>Regular meditation practice</li>
+                                <li>Positive thinking and gratitude</li>
+                                <li>Spiritual study and contemplation</li>
+                                <li>Service to others (seva)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Common Conditions and Natural Approaches</h2>
+                    <div class="conditions-grid">
+                        <div class="condition-card">
+                            <h4>😰 Stress and Anxiety</h4>
+                            <div class="treatment-approach">
+                                <p><strong>Approach:</strong> Vata-pacifying lifestyle and herbs</p>
+                                <ul>
+                                    <li>Ashwagandha and Brahmi supplements</li>
+                                    <li>Regular meditation and pranayama</li>
+                                    <li>Warm oil massage (abhyanga)</li>
+                                    <li>Grounding foods and routines</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="condition-card">
+                            <h4>🔥 Digestive Issues</h4>
+                            <div class="treatment-approach">
+                                <p><strong>Approach:</strong> Strengthen digestive fire (agni)</p>
+                                <ul>
+                                    <li>Ginger and digestive spices</li>
+                                    <li>Proper meal timing and food combining</li>
+                                    <li>Triphala for gentle cleansing</li>
+                                    <li>Mindful eating practices</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="condition-card">
+                            <h4>😴 Sleep Disorders</h4>
+                            <div class="treatment-approach">
+                                <p><strong>Approach:</strong> Balance nervous system</p>
+                                <ul>
+                                    <li>Evening routine with warm milk and herbs</li>
+                                    <li>Jatamansi and Shankhpushpi for sleep</li>
+                                    <li>Foot massage with sesame oil</li>
+                                    <li>Avoiding stimulating activities before bed</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="condition-card">
+                            <h4>🤧 Respiratory Issues</h4>
+                            <div class="treatment-approach">
+                                <p><strong>Approach:</strong> Clear and strengthen lungs</p>
+                                <ul>
+                                    <li>Tulsi tea and steam inhalation</li>
+                                    <li>Pranayama breathing exercises</li>
+                                    <li>Avoiding cold and damp foods</li>
+                                    <li>Honey and ginger for cough</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>Integration with Modern Healthcare</h2>
+                    <div class="integration-info">
+                        <div class="integration-section">
+                            <h4>🤝 Complementary Approach</h4>
+                            <p>Natural medicine works best when integrated with conventional healthcare. Always inform your healthcare providers about any natural treatments you're using.</p>
+                        </div>
+                        
+                        <div class="integration-section">
+                            <h4>⚕️ When to Seek Medical Attention</h4>
+                            <ul>
+                                <li>Severe or persistent symptoms</li>
+                                <li>Emergency situations</li>
+                                <li>Chronic conditions requiring monitoring</li>
+                                <li>Before making major treatment changes</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="integration-section">
+                            <h4>🔬 Evidence-Based Practice</h4>
+                            <p>Many traditional practices are being validated by modern research. Stay informed about scientific studies supporting natural medicine approaches.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Styles -->
+    <style>
+        .page-content {
+            padding-top: 80px;
+            min-height: 100vh;
+            background: white;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        .page-body {
+            padding: 3rem 0;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .content-section h2 {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .highlight-box h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .practice-grid, .taste-grid, .dosha-nutrition, .herbs-grid, .modalities-grid, .conditions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .practice-card, .taste-card, .dosha-card, .herb-card, .modality-card, .condition-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .practice-card:hover, .taste-card:hover, .dosha-card:hover, .herb-card:hover, .modality-card:hover, .condition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+        }
+
+        .practice-card h4, .taste-card h4, .dosha-card h3, .herb-card h3, .modality-card h3, .condition-card h4 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .seasonal-guide, .meditation-types, .implementation-guide, .preparations-grid, .mind-body-approaches, .prevention-strategies {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .season-item, .meditation-card, .step-card, .prep-card, .approach-card, .strategy-section {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .dosha-details {
+            margin-top: 1rem;
+        }
+
+        .dosha-details h4 {
+            color: #4a5568;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .dosha-details ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            color: #718096;
+        }
+
+        .herb-details, .modality-details, .treatment-approach {
+            margin-top: 1rem;
+        }
+
+        .herb-details p, .modality-details p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .agni-guide, .constitutional-herbs, .safety-guidelines, .integration-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .agni-type, .constitution-herbs, .safety-section, .integration-section {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .agni-tips, .cooking-tips {
+            background: #e6fffa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .meal-planning {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .meal-section {
+            background: #fff5f5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        ul {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content-section h2 {
+                font-size: 2rem;
+            }
+            
+            .practice-grid, .taste-grid, .dosha-nutrition, .herbs-grid, .modalities-grid, .conditions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        // Page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            // Hide main content
+            document.querySelector('main').style.display = 'none';
+            
+            // Show selected page
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.style.display = 'block';
+                window.scrollTo(0, 0);
+            }
+        }
+
+        function showHome() {
+            // Hide all pages
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            // Show main content
+            document.querySelector('main').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // Add click handlers to feature cards
+        document.querySelectorAll('.feature-card').forEach((card, index) => {
+            const pageIds = ['vedic-lifestyle-page', 'ayurvedic-nutrition-page', 'herbs-page', 'natural-medicine-page'];
+            card.addEventListener('click', () => {
+                showPage(pageIds[index]);
+            });
+            card.style.cursor = 'pointer';
+        });
+
+        // Update navigation links
+        document.querySelector('a[href="#lifestyle"]').addEventListener('click', (e) => {
+            e.preventDefault();
+            showPage('vedic-lifestyle-page');
+        });
+
+        document.querySelector('a[href="#nutrition"]').addEventListener('click', (e) => {
+            e.preventDefault();
+            showPage('ayurvedic-nutrition-page');
+        });
+
+        document.querySelector('a[href="#herbs"]').addEventListener('click', (e) => {
+            e.preventDefault();
+            showPage('herbs-page');
+        });
+
+        document.querySelector('a[href="#medicine"]').addEventListener('click', (e) => {
+            e.preventDefault();
+            showPage('natural-medicine-page');
+        });
+
+        // Add Natural Medicine to nav (we'll need to update the HTML nav)
+        document.querySelector('a[href="#home"]').addEventListener('click', (e) => {
+            e.preventDefault();
+            showHome();
+        });
+
+        document.querySelector('a[href="#about"]').addEventListener('click', (e) => {
+            e.preventDefault();
+            showHome();
+            setTimeout(() => {
+                document.querySelector('#about').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 100);
+        });
+
+        document.querySelector('a[href="#contact"]').addEventListener('click', (e) => {
+            e.preventDefault();
+            showHome();
+            setTimeout(() => {
+                document.querySelector('#contact').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 100);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            if (!anchor.hasAttribute('data-page-nav')) {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Dynamic card animations
+        document.querySelectorAll('.feature-card').forEach((card, index) => {
+            card.addEventListener('mouseenter', () => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>
